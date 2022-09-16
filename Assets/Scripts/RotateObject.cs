@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject : MonoBehaviour
+public class RotateObject : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] Vector3 moveDirection;
@@ -28,7 +28,7 @@ public class MoveObject : MonoBehaviour
             startingLocation = gameObject.transform.position;
         }
 
-        gameObject.transform.Translate(moveDirection * moveSpeed);
+        gameObject.transform.Rotate(moveDirection * moveSpeed);
     }
 
     void FlipMoveDirection()

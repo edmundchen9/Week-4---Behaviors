@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MovementActivator : MonoBehaviour
+public class RotateMovementActivator : MonoBehaviour
 {
     [SerializeField] GameObject objectToActivate;
 
@@ -10,7 +10,7 @@ public class MovementActivator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    objectToActivate.GetComponent<MoveObject>().enabled = false;
+    objectToActivate.GetComponent<RotateObject>().enabled = false;
     }
 
     // Update is called once per frame
@@ -21,18 +21,17 @@ public class MovementActivator : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-    objectToActivate.GetComponent<MoveObject>().enabled = true;
+    objectToActivate.GetComponent<RotateObject>().enabled = true;
     }
 
     private void OnTriggerExit(Collider other)
     {
-    objectToActivate.GetComponent<MoveObject>().enabled = false;
+    objectToActivate.GetComponent<RotateObject>().enabled = false;
     }
     
     private void OnTriggerStay(Collider other)
     {
-    objectToActivate.GetComponent<MoveObject>().enabled = true;
-
+    objectToActivate.GetComponent<RotateObject>().enabled = true;
     }
 
 }
